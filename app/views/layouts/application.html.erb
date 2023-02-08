@@ -10,14 +10,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
+    <header class="navbar navbar-fixed-top navbar-default">
       <div class="container">
         <%= link_to "FRIDGEM", '#', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path, id: "logo2" %></li>
-            <li><%= link_to "Sign up", signup_path, id: "logo2" %></li>
-            <li><%= link_to "Log in", '#', id: "logo2" %></li>
+            <li><%= link_to "ユーザ登録", signup_path, id: "logo2" %></li>
+            <li><%= link_to "ログイン", '#', id: "logo2" %></li>
           </ul>
         </nav>
       </div>

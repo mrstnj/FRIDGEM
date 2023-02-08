@@ -1,4 +1,5 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'ユーザ登録') %>
+<!--
 <h1>Sign up</h1>
 
 <div class="row">
@@ -20,5 +21,34 @@
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
+  </div>
+</div>
+-->
+
+<div class="form-wrapper">
+  <h1>Sign In</h1>
+  <%= form_with(model: @user) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <form>
+      <div class="form-item">
+        <%= f.text_field :name, :placeholder => "ユーザ名" %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :email, :placeholder => "Eメール" %>
+      </div>
+      <div class="form-item">
+        <%= f.password_field :password, :placeholder => "パスワード" %>
+      </div>
+      <div class="form-item">
+        <%= f.password_field :password_confirmation, :placeholder => "確認用パスワード" %>
+      </div>
+      <div class="button-panel">
+        <%= f.submit "登録", class: "button" %>
+      </div>
+    </form>
+  <% end %>
+  <div class="form-footer">
+    <p><a href="#">Create an account</a></p>
+    <p><a href="#">Forgot password?</a></p>
   </div>
 </div>

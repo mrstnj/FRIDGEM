@@ -15,8 +15,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
-
-  padding-top: 60px;
+  /*padding-top: 60px;*/
 }
 
 section {
@@ -59,11 +58,11 @@ h2 {
 
 /* home */
 .top-wrapper {
-  height: 100vh; /* 全画面表示 */
+  height: 100vh;
   background: url(fd400696.jpg) no-repeat;
   background-size: cover;
   max-width: 100%;
-  padding: 180px 0 100px 0;
+  padding: 250px 0 100px 0;
   color: white;
   text-align: center;
 }
@@ -134,7 +133,7 @@ p {
   color: black;
 }
 
-/* miscellaneous */
+/* debug */
 
 .debug_dump {
   clear: both;
@@ -143,7 +142,7 @@ p {
   margin-top: 45px;
 }
 
-/* forms */
+/* forms
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -154,6 +153,96 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+*/
+
+/* Sign in */
+/* Fonts */
+/* Simple Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* body */
+body {
+  background: #e9e9e9;
+  color: #5e5e5e;
+}
+
+/* Form Layout */
+.form-wrapper {
+  background: #fafafa;
+  margin: 130px auto;
+  padding: 0 1em;
+  max-width: 370px;
+}
+
+.form-wrapper h1 {
+  text-align: center;
+  padding: 1em 0;
+}
+
+form {
+  padding: 0 1.5em;
+}
+
+.form-item {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+.form-item input {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  color: #666;
+  font-size: 1em;
+  height: 50px;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-item input:focus {
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.button-panel {
+  margin: 2em 0 0;
+  width: 100%;
+}
+
+.button-panel .button {
+  background: #f16272;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+.button:hover {
+  background: #ee3e52;
+}
+
+.form-footer {
+  font-size: 1em;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-footer a:hover {
+  border-bottom: 1px dotted #8c8c8c;
 }
 
 #error_explanation {
