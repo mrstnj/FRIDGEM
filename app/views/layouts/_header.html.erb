@@ -12,7 +12,7 @@
       </div>
       <ul id="navbar-menu"
           class="nav navbar-nav navbar-right collapse navbar-collapse">
-        <li><%= link_to "Home",   root_path, id: "logo2" %></li>
+        <li><%= link_to "Home", root_path, id: "logo2" %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
@@ -24,14 +24,14 @@
               <li><%= link_to "Settings", '#' %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", logout_path,
+                <%= link_to "ログアウト", logout_path,
                                        data: { "turbo-method": :delete } %>
               </li>
             </ul>
           </li>
         <% else %>
           <li><%= link_to "ユーザ登録", signup_path, id: "logo2" %></li>
-          <li><%= link_to "ログイン", '#', id: "logo2" %></li>
+          <li><%= link_to "ログイン", login_path, id: "logo2" %></li>
         <% end %>
       </ul>
     </nav>

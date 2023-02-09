@@ -26,7 +26,7 @@
 -->
 
 <div class="form-wrapper">
-  <h1>Sign In</h1>
+  <h1>ユーザ登録</h1>
   <%= form_with(model: @user) do |f| %>
     <%= render 'shared/error_messages' %>
     <form>
@@ -46,9 +46,7 @@
         <%= f.submit "登録", class: "button" %>
       </div>
     </form>
+    <div class="form-footer">
+    </div>
   <% end %>
-  <div class="form-footer">
-    <p><a href="#">Create an account</a></p>
-    <p><a href="#">Forgot password?</a></p>
-  </div>
 </div>
