@@ -84,12 +84,12 @@ h2 {
 }
 
 .login {
-  background-color: #3b5998;
+  background-color: #55acee;
   margin-right: 10px;
 }
 
-.add-user {
-  background-color: #55acee;
+.signup {
+  background-color: #3b5998;
 }
 
 .btn {
@@ -261,7 +261,7 @@ form {
   }
 }
 
-/* sidebar */
+/* サイドバー */
 
 aside {
   section.user_info {
@@ -289,8 +289,63 @@ aside {
   }
 }
 
-/* Dropdown menu */
+/* Accountプルダウン */
 
 .dropdown-menu.active {
   display: block;
 }
+
+
+/* ユーザメニュー */
+.menu-wrapper {
+  text-align: center;
+  padding: 240px 50px 100px 100px;
+}
+
+.menu {
+  float: left;
+  width: 25%;
+}
+
+.txt-contents {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: black;
+}
+
+.image_circle1 {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-image: url(fd400977.jpg);
+  margin: auto;
+  background-size: contain;
+}
+
+.image_circle2 {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-image: url(niz0024-003.jpg);
+  margin: auto;
+  background-size: contain;
+}
+
+.image_circle3 {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-image: url(fd400677.jpg);
+  margin: auto;
+  background-size: contain;
+}
+
+.image_circle4 {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-image: url(4569115_s.jpg);
+  margin: auto;
+  background-size: contain;
+}
+
