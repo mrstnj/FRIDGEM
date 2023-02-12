@@ -2,18 +2,26 @@
 <div class="menu-wrapper">
   <div class="menu">
     <div class="image_circle1"></div>
-    <p class="txt-contents"><a href="#">食材を登録する</a></p>
+    <p class="txt-contents">
+      <%= link_to "食材を登録する", new_user_food_path(@user) %>
+    </p>
   </div>
   <div class="menu">
     <div class="image_circle2"></div>
-    <p class="txt-contents"><a href="#">食材を使う</a></p>
+    <p class="txt-contents">
+      <%= link_to "食材を使う", '#' %>
+    </p>
   </div>
   <div class="menu">
     <div class="image_circle3"></div>
-    <p class="txt-contents"><a href="#">食材一覧</a></p>
+    <p class="txt-contents">
+      <%= link_to "食材一覧", '#' %>
+    </p>
   </div>
   <div class="menu">
     <div class="image_circle4"></div>
-    <p class="txt-contents"><a href="#">食費カレンダー</a></p>
+    <p class="txt-contents">
+      <%= link_to "食費カレンダー", '#' %>
+　　</p>
   </div>
 </div>

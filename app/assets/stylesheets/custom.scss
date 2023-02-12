@@ -300,6 +300,8 @@ aside {
 .menu-wrapper {
   text-align: center;
   padding: 240px 50px 100px 100px;
+  background-color: #EEEEEE;
+  height: 100vh;
 }
 
 .menu {
@@ -349,3 +351,76 @@ aside {
   background-size: contain;
 }
 
+
+/* 食材登録*/
+/*デザインcss↓*/
+.box_con {
+  max-width: 900px;
+  margin: 90px  auto;
+  background-color: white;
+  padding: 2.5em 1em 4em 1em;
+}
+@media only screen and (max-width: 768px) {
+  .box_con {
+    width: 95%;
+  }
+}
+
+.box_con table {
+  width: 100%;
+}
+
+.box_con table tr {
+  position: relative;
+}
+
+.box_con table tr:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  border-bottom: dotted #cdcdcd 1px;
+}
+
+.box_con table th {
+  font-size: 1.2em;
+  width: 30%;
+  font-weight: normal;
+  padding: 1em .5em;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+  .box_con table th {
+    text-align: center;
+    width: 100%;
+    display: block;
+    background: #97ae88;
+    padding: .8em .2em;
+    color: #fff;
+  }
+}
+
+.box_con table td {
+  padding: 1em .5em;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 768px) {
+  .box_con table td {
+    padding: 1.5em .5em;
+    display: block;
+    width: 100%;
+  }
+}
+
+.box_con table select {
+  border: 1px solid #97ae88;
+}
+
+.box_con table select, .box_con table input {
+  width: 100%;
+  height: 3em;
+  padding: .5em;
+  box-sizing: border-box;
+}
