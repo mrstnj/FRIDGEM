@@ -261,6 +261,21 @@ form {
   }
 }
 
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
 /* サイドバー */
 
 aside {
