@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = Food.all
+    @foods = Food.where("user_id = ?", params[:user_id])
   end
 
   private
