@@ -368,7 +368,6 @@ aside {
 
 
 /* 食材登録*/
-/*デザインcss↓*/
 .food-wrapper {
   max-width: 900px;
   margin: 90px  auto;
@@ -472,4 +471,75 @@ aside {
 
 .button:hover {
   background: #ee3e52;
+}
+
+
+/* 食材一覧*/
+.foods-wrapper{
+  margin: 90px  auto;
+}
+
+.foods-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.tbl{
+  margin: 3px auto;
+}
+
+.name-cal{
+  width: 300px;
+}
+
+.price-cal, .quantity-cal{
+  width: 100px;
+}
+
+.date-cal{
+  width: 150px;
+}
+
+.foods-wrapper th {
+  text-align: center;
+  background: #e9727e;
+  border: solid 1px #ccc;
+  color: #fff;
+  padding: 10px;
+}
+.foods-wrapper td {
+  background: white;
+  border: solid 1px #ccc;
+  padding: 10px;
+}
+@media screen and (max-width: 640px) {
+  .tbl {
+    width: 80%;
+  }
+  .tbl .thead {
+    display: none;
+  }
+  .tbl tr,
+  .tbl td{
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  .tbl td:first-child:before {
+    content: "見出し:before";
+    background: #e9727e;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: bold;
+    height: 40px;
+    padding: 10px;
+    position: absolute;
+    top: -41px;
+    left: -0.2%;
+    display: block;
+    width: 100.5%;
+  }
+  .tbl tr {
+    margin-bottom: 40px;
+  }
 }

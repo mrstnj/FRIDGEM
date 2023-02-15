@@ -1,0 +1,20 @@
+<% provide(:title, '食材一覧') %>
+<div class="foods-wrapper">
+  <h1>食材一覧</h1>
+  <table class="tbl">
+    <tr class="thead">
+      <th class="name-cal">食材名</th>
+      <th class="price-cal">単価</th>
+    　<th class="quantity-cal">数量</th>
+    　<th class="date-cal">購入年月日</th>
+    </tr>
+    <% @foods.each do |food| %>
+  　　<tr>
+        <td><%= food.name %></td>
+        <td><%= food.price %></td>
+        <td><%= food.quantity %></td>
+        <td><%= food.order_date %></td>
+  　　  </tr>
+    <% end %>
+  </table>
+</div>

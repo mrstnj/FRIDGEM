@@ -11,10 +11,14 @@ class FoodsController < ApplicationController
     @food = current_user.foods.build(food_params)
     if @food.save
       flash[:success] = "Food created!"
-      redirect_to root_url
+      redirect_to user_foods_path
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def index
+    @foods = Food.all
   end
 
   private
@@ -23,7 +27,7 @@ class FoodsController < ApplicationController
       params.require(:food).permit(:name, :price, :quantity, :order_date)
     end
 
-  # ログイン済みユーザーかどうか確認
+    # ログイン済みユーザーかどうか確認
     def logged_in_user
       unless logged_in?
         flash[:danger] = "Please log in."
