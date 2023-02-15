@@ -3,9 +3,25 @@ class FoodsController < ApplicationController
   before_action :correct_user
 
   def new
+    @user = User.find(params[:user_id])
+    @food = Food.new
+  end
+
+  def create
+    @food = current_user.foods.build(food_params)
+    if @food.save
+      flash[:success] = "Food created!"
+      redirect_to root_url
+    else
+      render 'new', status: :unprocessable_entity
+    end
   end
 
   private
+
+    def food_params
+      params.require(:food).permit(:name, :price, :quantity, :order_date)
+    end
 
   # ログイン済みユーザーかどうか確認
     def logged_in_user

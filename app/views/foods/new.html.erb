@@ -1,39 +1,42 @@
 <% provide(:title, '食材登録') %>
-<div class="box_con">
+<div class="food-wrapper">
   <h1>食材登録</h1>
-  <%= form_with(model: @food) do |f| %>
+  <%= form_with model: [@user, @food] do |f| %>
   <table class="formTable">
     <form>
     <tr>
-      <th><%= f.label :食材名 %></th>
-      <td>
-      　 <%= f.text_field :name %>
-      </td>
-    </tr>
-    <tr>
       <div class="form-item">
-        <th><%= f.label :単価 %></th>
-      <td>
-        <%= f.number_field :price %>円
-      <td>
-    </tr>
-    <tr>
-      <div class="form-itm">
-        <th><%= f.label :購入数 %></th>
+        <th><%= f.label :食材名 %></th>
         <td>
-          <%= f.number_field :quantity %> 個
+          <%= f.text_field :name, size: 70 %>
         </td>
       </div>
     </tr>
     <tr>
-      <th><%= f.label :購入日 %></th>
+      <div class="form-item">
+        <th><%= f.label :単価 %></th>
+        <td>
+          <%= f.number_field :price, min: 1 %> 円
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th><%= f.label :購入数 %></th>
+        <td>
+          <%= f.number_field :quantity, min: 1 %> 個
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <th><%= f.label :購入年月日 %></th>
       <td>
-        <%= f.date_select :order_date %>
+        <%= f.date_select :order_date, use_month_numbers: true %>
       </td>
     </tr>
     </form>
   </table>
-  <div class="button-panel">
+  <div class="button-panel2">
     <%= f.submit "登録", class: "button" %>
   </div>
   <% end %>

@@ -369,27 +369,32 @@ aside {
 
 /* 食材登録*/
 /*デザインcss↓*/
-.box_con {
+.food-wrapper {
   max-width: 900px;
   margin: 90px  auto;
   background-color: white;
   padding: 2.5em 1em 4em 1em;
 }
 @media only screen and (max-width: 768px) {
-  .box_con {
+  .food-wrapper {
     width: 95%;
   }
 }
 
-.box_con table {
+.food-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.food-wrapper table {
   width: 100%;
 }
 
-.box_con table tr {
+.food-wrapper table tr {
   position: relative;
 }
 
-.box_con table tr:after {
+.food-wrapper table tr:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -399,15 +404,16 @@ aside {
   border-bottom: dotted #cdcdcd 1px;
 }
 
-.box_con table th {
+.food-wrapper table th {
   font-size: 1.2em;
+  text-align: center;
   width: 30%;
   font-weight: normal;
   padding: 1em .5em;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 768px) {
-  .box_con table th {
+  .food-wrapper table th {
     text-align: center;
     width: 100%;
     display: block;
@@ -417,25 +423,53 @@ aside {
   }
 }
 
-.box_con table td {
+.food-wrapper table td {
   padding: 1em .5em;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 768px) {
-  .box_con table td {
+  .food-wrapper table td {
     padding: 1.5em .5em;
     display: block;
     width: 100%;
   }
 }
 
-.box_con table select {
+.food-wrapper table select {
   border: 1px solid #97ae88;
-}
-
-.box_con table select, .box_con table input {
-  width: 100%;
+  width: 30%;
   height: 3em;
   padding: .5em;
   box-sizing: border-box;
+}
+
+.food-wrapper table input {
+  height: 3em;
+  padding: .5em;
+  box-sizing: border-box;
+}
+
+.button-panel2 {
+  margin: 2em 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+.button-panel2 .button {
+  background: #f16272;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 30%;
+}
+
+.button:hover {
+  background: #ee3e52;
 }
