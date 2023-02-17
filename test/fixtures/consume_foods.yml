@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 1
+  consume_quantity: 1
+  note: MyString
+  consume_date: 2023-02-15
+  user: one
+
+two:
+  name: MyString
+  price: 1
+  consume_quantity: 1
+  note: MyString
+  consume_date: 2023-02-15
+  user: two

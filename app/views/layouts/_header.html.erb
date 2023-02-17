@@ -20,7 +20,7 @@
             </a>
             <ul id="dropdown-menu" class="dropdown-menu">
               <li><%= link_to "食材を登録する", new_user_food_path(@user) %></li>
-              <li><%= link_to "食材を使う", '#' %></li>
+              <li><%= link_to "食材を使う", new_user_consume_food_path(@user) %></li>
               <li><%= link_to "食材一覧", user_foods_path(@user) %></li>
               <li><%= link_to "食費カレンダー", '#' %></li>
               <li class="divider"></li>
