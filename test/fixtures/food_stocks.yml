@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_quantity: 1
+  order_date: 2023-02-17
+  food: one
+
+two:
+  stock_quantity: 1
+  order_date: 2023-02-17
+  food: two

@@ -1,0 +1,29 @@
+<% provide(:title, '食材登録') %>
+<div class="food-wrapper">
+  <h1>食材登録</h1>
+  <%= form_with model: [@user, @food, @foodstock] do |f| %>
+  <table class="formTable">
+    <form>
+    <tr>
+      <div class="form-item">
+        <th>食材名</th>
+        <td>
+          <%= @food.name %>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th>単価</th>
+        <td>
+          <%= @food.price %> 円
+        </td>
+      </div>
+    </tr>
+    </form>
+  </table>
+  <div class="button-panel2">
+    <%= f.submit "登録", class: "button" %>
+  </div>
+  <% end %>
+</div>
