@@ -9,10 +9,10 @@ class FoodConsumesController < ApplicationController
   end
 
   def create
-    @food_consume = current_user.foods.build(food_params)
+    @food_consume = current_user.food_consumes.build(food_params)
     if @food_consume.save
       flash[:success] = "Food created!"
-      redirect_to user_food_consumes_path
+      redirect_to user_food_stocks_path
     else
       render 'new', status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class FoodConsumesController < ApplicationController
   private
 
     def food_params
-      params.require(:food).permit(:name, :price, :consume_quantity, :consume_date)
+      params.require(:food_consume).permit(:name, :price, :consume_quantity, :consume_date)
     end
 
     # ログイン済みユーザーかどうか確認

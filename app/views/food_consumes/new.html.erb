@@ -8,7 +8,7 @@
       <div class="form-item">
         <th><%= f.label :食材名 %></th>
         <td>
-          <%= f.collection_select(:name, @food_stocks, :id, :name) %>
+          <%= f.collection_select(:name, @food_stocks, :name, :name, prompt: "選択してください") %>
         </td>
       </div>
     </tr>
@@ -16,7 +16,7 @@
       <div class="form-item">
         <th><%= f.label :単価 %></th>
         <td>
-          <%= f.number_field :price, min: 1 %> 円
+          <%= f.collection_select(:price, @food_stocks, :price, :price, prompt: "選択してください") %> 円
         </td>
       </div>
     </tr>
@@ -24,7 +24,7 @@
       <div class="form-item">
         <th><%= f.label :消費数 %></th>
         <td>
-          <%= f.number_field :consume_quantity, min: 1 %> 個
+          <%= f.number_field :consume_quantity, max: 1 %> 個
         </td>
       </div>
     </tr>
@@ -32,6 +32,12 @@
       <th><%= f.label :消費年月日 %></th>
       <td>
         <%= f.date_select :consume_date, use_month_numbers: true %>
+      </td>
+    </tr>
+　　<tr>
+      <th><%= f.label :メモ %></th>
+      <td>
+        <%= f.text_field :note, size: 70 %>
       </td>
     </tr>
     </form>

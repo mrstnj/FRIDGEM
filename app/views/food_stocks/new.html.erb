@@ -1,7 +1,7 @@
 <% provide(:title, '食材登録') %>
 <div class="food-wrapper">
   <h1>食材登録</h1>
-  <%= form_with model: [@user, @foodstock] do |f| %>
+  <%= form_with model: [@user, @food_stock] do |f| %>
   <table class="formTable">
     <form>
     <tr>
@@ -24,7 +24,7 @@
       <div class="form-item">
         <th><%= f.label :購入数 %></th>
         <td>
-          <%= f.number_field :quantity, min: 1 %> 個
+          <%= f.number_field :stock_quantity, min: 1 %> 個
         </td>
       </div>
     </tr>

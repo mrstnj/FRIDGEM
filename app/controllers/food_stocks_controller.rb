@@ -4,12 +4,12 @@ class FoodStocksController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @foodstock = FoodStock.new
+    @food_stock = FoodStock.new
   end
 
   def create
-    @foodstock = current_user.foods.build(food_params)
-    if @foodstock.save
+    @food_stock = current_user.food_stocks.build(food_params)
+    if @food_stock.save
       flash[:success] = "Food created!"
       redirect_to user_food_stocks_path
     else
