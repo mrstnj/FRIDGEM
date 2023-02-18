@@ -8,11 +8,11 @@
     　<th class="quantity-cal">数量</th>
     　<th class="date-cal">購入年月日</th>
     </tr>
-    <% @foods.each do |food| %>
+    <% @food_stocks.each do |food| %>
   　　<tr>
         <td><%= food.name %></td>
         <td><%= food.price %></td>
-        <td><%= food.quantity %></td>
+        <td><%= food.stock_quantity %></td>
         <td><%= food.order_date %></td>
   　　  </tr>
     <% end %>

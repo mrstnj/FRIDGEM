@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
   resources :users do
-    resources :foods, shallow: true
-    resources :consume_foods
+    resources :food_stocks, shallow: true
+    resources :food_consumes, shallow: true
   end
 end

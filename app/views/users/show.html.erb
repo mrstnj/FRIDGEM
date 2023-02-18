@@ -3,19 +3,19 @@
   <div class="menu">
     <div class="image_circle1"></div>
     <p class="txt-contents">
-      <%= link_to "食材を登録する", new_user_food_path(@user) %>
+      <%= link_to "食材を登録する", new_user_food_stock_path(@user) %>
     </p>
   </div>
   <div class="menu">
     <div class="image_circle2"></div>
     <p class="txt-contents">
-      <%= link_to "食材を使う", new_user_consume_food_path(@user) %>
+      <%= link_to "食材を使う", new_user_food_consume_path(@user) %>
     </p>
   </div>
   <div class="menu">
     <div class="image_circle3"></div>
     <p class="txt-contents">
-      <%= link_to "食材一覧", user_foods_path(@user) %>
+      <%= link_to "食材一覧", user_food_stocks_path(@user) %>
     </p>
   </div>
   <div class="menu">

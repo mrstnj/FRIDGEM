@@ -10,34 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_17_140712) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_18_033553) do
   create_table "food_consumes", force: :cascade do |t|
     t.integer "consume_quantity"
     t.string "note"
     t.date "consume_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "price"
+    t.integer "user_id", null: false
     t.index ["created_at"], name: "index_consume_foods_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_food_consumes_on_user_id"
   end
 
   create_table "food_stocks", force: :cascade do |t|
     t.integer "stock_quantity"
     t.date "order_date"
-    t.integer "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["created_at"], name: "index_food_stocks_on_created_at"
-    t.index ["food_id"], name: "index_food_stocks_on_food_id"
-  end
-
-  create_table "foods", force: :cascade do |t|
     t.string "name"
     t.integer "price"
     t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_foods_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_foods_on_user_id"
+    t.index ["created_at"], name: "index_food_stocks_on_created_at"
+    t.index ["user_id"], name: "index_food_stocks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_140712) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "food_stocks", "foods"
-  add_foreign_key "foods", "users"
+  add_foreign_key "food_consumes", "users"
+  add_foreign_key "food_stocks", "users"
 end
