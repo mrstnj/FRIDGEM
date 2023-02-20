@@ -7,4 +7,8 @@ class FoodStock < ApplicationRecord
     validates :stock_quantity
     validates :order_date
   end
+
+  def view_name_and_date
+    self.name + '(' "購入日："+ self.order_date.to_s + ')'
+  end
 end

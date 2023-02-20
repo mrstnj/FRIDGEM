@@ -21,7 +21,7 @@ class FoodConsumesController < ApplicationController
   private
 
     def food_params
-      params.require(:food_consume).permit(:name, :price, :consume_quantity, :consume_date)
+      params.require(:food_consume).permit(:name, :price, :consume_quantity, :consume_date, :note)
     end
 
     # ログイン済みユーザーかどうか確認

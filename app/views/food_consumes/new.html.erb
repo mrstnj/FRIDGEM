@@ -8,23 +8,24 @@
       <div class="form-item">
         <th><%= f.label :食材名 %></th>
         <td>
-          <%= f.collection_select(:name, @food_stocks, :name, :name, prompt: "選択してください") %>
+          <%= f.collection_select(:name, FoodStock.all, :id, :view_name_and_date,
+          {prompt: "選択してください"}, {class: 'ChoseTemplate', :onchange => "changeTemplate($(this).val())"}) %>
         </td>
       </div>
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :単価 %></th>
+        <th><%= f.label :単価（円） %></th>
         <td>
-          <%= f.collection_select(:price, @food_stocks, :price, :price, prompt: "選択してください") %> 円
+          <%= f.number_field :price, id: "template_body", min: 1  %>
         </td>
       </div>
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :消費数 %></th>
+        <th><%= f.label :消費数（個）  %></th>
         <td>
-          <%= f.number_field :consume_quantity, max: 1 %> 個
+          <%= f.number_field :consume_quantity, min: 1 %>
         </td>
       </div>
     </tr>
@@ -47,3 +48,16 @@
   </div>
   <% end %>
 </div>
+<script>
+  function changeTemplate(val){
+    var template_id = val;
+
+    $.ajax({
+      url: "/templates/get_body",
+      type: "GET",
+      data: {
+        template_id: template_id
+      }
+    })
+  }
+</script>
