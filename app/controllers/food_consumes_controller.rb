@@ -9,19 +9,41 @@ class FoodConsumesController < ApplicationController
   end
 
   def create
+    # 消費食材を在庫テーブルから取得する
+    @food_stock = FoodStock.find(params[:food_consume][:name])
+
+    # 在庫テーブルの数量を消費分マイナスする
+    consume_quantity = params[:food_consume][:consume_quantity]
+    stock_quantity = @food_stock.stock_quantity - consume_quantity.to_i
+
+    # 消費テーブルに登録する
     @food_consume = current_user.food_consumes.build(food_params)
-    if @food_consume.save
+    if @food_consume.save && @food_stock.update_attribute(:stock_quantity, stock_quantity)
       flash[:success] = "Food created!"
-      redirect_to user_food_stocks_path
+      redirect_to user_food_consumes_path
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def index
+   # @food_consumes = FoodConsume.all
+  #  @food_consumes.each do |food_consume|
+   #   food_consume[5] = food_consume.price * food_consume.consume_quantity
+  #  end
+
+   # @total = FoodConsume.group(:consume_date).sum(food_comsume[5])
+
   end
 
   private
 
     def food_params
       params.require(:food_consume).permit(:name, :price, :consume_quantity, :consume_date, :note)
+    end
+
+    def food_params2
+      params.require(:food_consume).permit(:name)
     end
 
     # ログイン済みユーザーかどうか確認

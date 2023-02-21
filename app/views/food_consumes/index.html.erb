@@ -1,0 +1,9 @@
+<% provide(:title, '食費カレンダー') %>
+<div class="calender-wrapper">
+  <h1 class="text-center">食費カレンダー</h2>
+  <div class="col-md-12">
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+  <% end %>
+  </div>
+</div>

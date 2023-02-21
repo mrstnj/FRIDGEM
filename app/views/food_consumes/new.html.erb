@@ -15,17 +15,17 @@
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :単価（円） %></th>
+        <th><%= f.label :単価 %></th>
         <td>
-          <%= f.number_field :price, id: "template_body", min: 1  %>
+          <%= f.number_field :price, id: "price", min: 1  %> 円
         </td>
       </div>
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :消費数（個）  %></th>
+        <th><%= f.label :消費数 %></th>
         <td>
-          <%= f.number_field :consume_quantity, min: 1 %>
+          <%= f.number_field :consume_quantity, id: "consume_quantity", min: 0.1, step: "0.1" %> 個
         </td>
       </div>
     </tr>
