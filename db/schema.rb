@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_18_033553) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_131533) do
   create_table "food_consumes", force: :cascade do |t|
     t.integer "consume_quantity"
     t.string "note"
-    t.date "consume_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "price"
     t.integer "user_id", null: false
+    t.datetime "start_time"
     t.index ["created_at"], name: "index_consume_foods_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_food_consumes_on_user_id"
   end

@@ -27,19 +27,13 @@ class FoodConsumesController < ApplicationController
   end
 
   def index
-   # @food_consumes = FoodConsume.all
-  #  @food_consumes.each do |food_consume|
-   #   food_consume[5] = food_consume.price * food_consume.consume_quantity
-  #  end
-
-   # @total = FoodConsume.group(:consume_date).sum(food_comsume[5])
-
+    @food_consumes = FoodConsume.all
   end
 
   private
 
     def food_params
-      params.require(:food_consume).permit(:name, :price, :consume_quantity, :consume_date, :note)
+      params.require(:food_consume).permit(:name, :price, :consume_quantity, :start_time, :note)
     end
 
     def food_params2

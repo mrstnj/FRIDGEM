@@ -2,8 +2,14 @@
 <div class="calender-wrapper">
   <h1 class="text-center">食費カレンダー</h2>
   <div class="col-md-12">
-  <%= month_calendar do |date| %>
+  <%= month_calendar events: @food_consumes do |date, food_consumes| %>
     <%= date.day %>
+      <% @total = 0 %>
+    <% food_consumes.each do |food_consume| %>
+      <br>
+      <% @total += food_consume.price %>
+    <% end %>
+    <%= "TOTAL：#{@total}円" if @total != 0 %>
   <% end %>
   </div>
 </div>
