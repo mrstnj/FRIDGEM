@@ -1,12 +1,14 @@
 <% provide(:title, '食材を使う') %>
-<div class="food-wrapper">
+<div class="title">
   <h1>食材を使う</h1>
+</div>
+<div class="form-wrapper2">
   <%= form_with model: [@user, @food_consume] do |f| %>
   <table class="formTable">
     <form>
     <tr>
       <div class="form-item">
-        <th><%= f.label :食材名 %></th>
+        <th>食材名</th>
         <td>
           <%= f.collection_select(:food_stock_id, FoodStock.all, :id, :view_name_and_date,
           {prompt: "選択してください"}, {class: 'ChoseTemplate', :onchange => "changeTemplate($(this).val())"}) %>
@@ -15,7 +17,7 @@
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :単価 %></th>
+        <th>単価</th>
         <td>
           <%= f.label :食材名を選択すると自動入力されます, id: "price" %>
         </td>
@@ -23,30 +25,35 @@
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :消費数 %></th>
+        <th>消費数</th>
         <td>
           <%= f.number_field :consume_quantity, id: "consume_quantity", min: 0.1, step: "0.1" %> 個
         </td>
       </div>
     </tr>
     <tr>
-      <th><%= f.label :消費年月日 %></th>
+      <th>消費年月日</th>
       <td>
         <%= f.datetime_field :start_time, value: Time.current.strftime('%Y-%m-%dT00:00:00') %>
       </td>
     </tr>
 　　<tr>
-      <th><%= f.label :メモ %></th>
+      <th>メモ</th>
       <td>
         <%= f.text_field :note, size: 70 %>
       </td>
     </tr>
     </form>
   </table>
-  <div class="button-panel2">
-    <%= f.submit "登録", class: "button" %>
+  <div class="btn-panel2">
+    <%= f.submit "登録", class: "btn" %>
   </div>
   <% end %>
+</div>
+<div class="back-btn">
+  <%= link_to current_user do %>
+  　<btn>戻る</btn>
+　<% end %>
 </div>
 <script>
   function changeTemplate(val){

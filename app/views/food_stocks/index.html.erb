@@ -1,7 +1,9 @@
 <% provide(:title, '食材一覧') %>
-<div class="foods-wrapper">
+<div class="title">
   <h1>食材一覧</h1>
-  <table class="tbl">
+</div>
+<div class="index-wrapper">
+  <table class="indexTable">
     <tr class="thead">
       <th class="name-cal">食材名</th>
       <th class="price-cal">単価</th>
@@ -17,4 +19,9 @@
   　　  </tr>
     <% end %>
   </table>
+</div>
+<div class="back-btn">
+  <%= link_to current_user do %>
+  　<btn>戻る</btn>
+　<% end %>
 </div>

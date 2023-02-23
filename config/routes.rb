@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :food_stocks, shallow: true
     resources :food_consumes, shallow: true
+    get    "/calender",   to: "food_consumes#calender"
   end
   get '/templates/get_body', to: "templates#get_body"
 end

@@ -22,7 +22,7 @@
               <li><%= link_to "食材を登録する", new_user_food_stock_path(@user) %></li>
               <li><%= link_to "食材を使う", new_user_food_consume_path(@user) %></li>
               <li><%= link_to "食材一覧", user_food_stocks_path(@user) %></li>
-              <li><%= link_to "食費カレンダー", user_food_consumes_path(@user) %></li>
+              <li><%= link_to "食費カレンダー", user_calender_path(@user) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "ログアウト", logout_path,

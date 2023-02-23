@@ -1,6 +1,8 @@
 <% provide(:title, '食材登録') %>
-<div class="food-wrapper">
+<div class="title">
   <h1>食材登録</h1>
+</div>
+<div class="form-wrapper2">
   <%= form_with model: [@user, @food_stock] do |f| %>
   <table class="formTable">
     <form>
@@ -36,8 +38,13 @@
     </tr>
     </form>
   </table>
-  <div class="button-panel2">
-    <%= f.submit "登録", class: "button" %>
+  <div class="btn-panel2">
+    <%= f.submit "登録", class: "btn" %>
   </div>
   <% end %>
+</div>
+<div class="back-btn">
+  <%= link_to current_user do %>
+  　<btn>戻る</btn>
+　<% end %>
 </div>

@@ -25,7 +25,7 @@ class FoodConsumesController < ApplicationController
     # 登録・更新できれば画面遷移する
     if @food_consume.save && @food_stock.update_attribute(:stock_quantity, stock_quantity)
       flash[:success] = "Food created!"
-      redirect_to user_food_consumes_path
+      redirect_to user_calender_path
     else
       render 'new', status: :unprocessable_entity
     end
@@ -33,7 +33,12 @@ class FoodConsumesController < ApplicationController
 
   def index
     # 全消費食材を取得する
-    @food_consumes = FoodConsume.all
+    @food_consumes = FoodConsume.where("user_id = ?", params[:user_id])
+  end
+
+  def calender
+    # 全消費食材を取得する
+    @food_consumes = FoodConsume.where("user_id = ?", params[:user_id])
   end
 
   private

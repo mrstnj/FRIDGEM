@@ -11,11 +11,11 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-/* universal */
+/* 一般 */
 
 body {
   font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
-  /*padding-top: 60px;*/
+  background-color: #EEEEEE;
 }
 
 section {
@@ -36,7 +36,7 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   line-height: 1;
 }
 
@@ -56,7 +56,7 @@ h2 {
   color: #777;
 }
 
-/* home */
+/* Home */
 .top-wrapper {
   height: 100vh;
   background: url(fd400696.jpg) no-repeat;
@@ -67,11 +67,6 @@ h2 {
   text-align: center;
 }
 
-.container {
-  width: 1170px;
-  margin: 0 auto;
-}
-
 .top-wrapper h1 {
   opacity: 0.7;
   font-size: 45px;
@@ -80,16 +75,17 @@ h2 {
 
 .top-wrapper p {
   opacity: 0.7;
+  font-size: 1.1em;
   margin-bottom: 15px;
+}
+
+.signup {
+  background-color: #3b5998;
 }
 
 .login {
   background-color: #55acee;
   margin-right: 10px;
-}
-
-.signup {
-  background-color: #3b5998;
 }
 
 .btn {
@@ -107,9 +103,7 @@ h2 {
 .fa {
   margin-right: 5px;
 }
-p {
-  font-size: 1.1em;
-}
+
 /* header */
 
 #logo {
@@ -132,7 +126,7 @@ p {
   color: black;
 }
 
-/* debug */
+/* デバッグ用 */
 
 .debug_dump {
   clear: both;
@@ -141,32 +135,9 @@ p {
   margin-top: 45px;
 }
 
-/* forms
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-*/
-
 /* ログイン・ユーザ登録 */
-/* Fonts */
-/* Simple Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* body */
-body {
-  background: #e9e9e9;
-  color: #5e5e5e;
-}
-
-/* Form Layout */
 .form-wrapper {
   background: #fafafa;
   margin: 130px auto;
@@ -205,12 +176,12 @@ form {
   outline: none;
 }
 
-.button-panel {
+.btn-panel {
   margin: 2em 0 0;
   width: 100%;
 }
 
-.button-panel .button {
+.btn-panel .btn {
   background: #f16272;
   border: none;
   color: #fff;
@@ -225,7 +196,7 @@ form {
   width: 100%;
 }
 
-.button:hover {
+.btn:hover {
   background: #ee3e52;
 }
 
@@ -237,6 +208,7 @@ form {
 
 .form-footer a {
   color: #8c8c8c;
+  font-size: 1.1em;
   text-decoration: none;
   transition: border-color 0.3s;
 }
@@ -244,21 +216,6 @@ form {
 .form-footer a:hover {
   color: black;
   text-decoration: none;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
 }
 
 .checkbox {
@@ -276,31 +233,19 @@ form {
   margin-left: 0;
 }
 
-/* サイドバー */
 
-aside {
-  section.user_info {
-    margin-top: 20px;
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
   }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
   }
 }
 
@@ -310,13 +255,11 @@ aside {
   display: block;
 }
 
-
 /* ユーザメニュー */
 .menu-wrapper {
   text-align: center;
-  padding: 240px 50px 100px 100px;
+  padding: 240px 100px 100px 100px;
   background-color: #EEEEEE;
-  height: 100vh;
 }
 
 .menu {
@@ -366,34 +309,36 @@ aside {
   background-size: contain;
 }
 
+/* 機能画面共通 */
+.title{
+  background-image: url(header.png);
+  background-size: cover;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 60px 10px 10px 10px;
+}
 
-/* 食材登録*/
-.food-wrapper {
+/* 食材在庫・食材消費登録*/
+.form-wrapper2 {
   max-width: 900px;
-  margin: 90px  auto;
-  background-color: white;
+  margin: 0  auto;
   padding: 2.5em 1em 4em 1em;
 }
 @media only screen and (max-width: 768px) {
-  .food-wrapper {
+  .form-wrapper2 {
     width: 95%;
   }
 }
 
-.food-wrapper h1 {
-  font-size: 2em;
-  text-align: center;
-}
-
-.food-wrapper table {
+.form-wrapper2 table {
   width: 100%;
 }
 
-.food-wrapper table tr {
+.form-wrapper2 table tr {
   position: relative;
 }
 
-.food-wrapper table tr:after {
+.form-wrapper2 table tr:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -403,7 +348,7 @@ aside {
   border-bottom: dotted #cdcdcd 1px;
 }
 
-.food-wrapper table th {
+.form-wrapper2 table th {
   font-size: 1.2em;
   text-align: center;
   width: 30%;
@@ -412,7 +357,7 @@ aside {
   box-sizing: border-box;
 }
 @media only screen and (max-width: 768px) {
-  .food-wrapper table th {
+  .form-wrapper2 table th {
     text-align: center;
     width: 100%;
     display: block;
@@ -422,19 +367,19 @@ aside {
   }
 }
 
-.food-wrapper table td {
+.form-wrapper2 table td {
   padding: 1em .5em;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 768px) {
-  .food-wrapper table td {
+  .form-wrapper2 table td {
     padding: 1.5em .5em;
     display: block;
     width: 100%;
   }
 }
 
-.food-wrapper table select {
+.form-wrapper2 table select {
   border: 1px solid #97ae88;
   width: auto;
   height: 3em;
@@ -442,19 +387,19 @@ aside {
   box-sizing: border-box;
 }
 
-.food-wrapper table input {
+.form-wrapper2 table input {
   height: 3em;
   padding: .5em;
   box-sizing: border-box;
 }
 
-.button-panel2 {
+.btn-panel2 {
   margin: 2em 0 0;
   width: 100%;
   text-align: center;
 }
 
-.button-panel2 .button {
+.btn-panel2 .btn {
   background: #f16272;
   border: none;
   color: #fff;
@@ -469,22 +414,16 @@ aside {
   width: 30%;
 }
 
-.button:hover {
+.btn:hover {
   background: #ee3e52;
 }
 
-
-/* 食材一覧*/
-.foods-wrapper{
+/* 食材在庫・食材消費一覧*/
+.index-wrapper{
   margin: 90px  auto;
 }
 
-.foods-wrapper h1 {
-  font-size: 2em;
-  text-align: center;
-}
-
-.tbl{
+.indexTable{
   margin: 3px auto;
 }
 
@@ -500,32 +439,32 @@ aside {
   width: 150px;
 }
 
-.foods-wrapper th {
+.index-wrapper th {
   text-align: center;
   background: #e9727e;
   border: solid 1px #ccc;
   color: #fff;
   padding: 10px;
 }
-.foods-wrapper td {
+.index-wrapper td {
   background: white;
   border: solid 1px #ccc;
   padding: 10px;
 }
 @media screen and (max-width: 640px) {
-  .tbl {
+  .indexTable {
     width: 80%;
   }
-  .tbl .thead {
+  .indexTable .thead {
     display: none;
   }
-  .tbl tr,
-  .tbl td{
+  .indexTable tr,
+  .indexTable td{
     display: block;
     width: 100%;
     position: relative;
   }
-  .tbl td:first-child:before {
+  .indexTable td:first-child:before {
     content: "見出し:before";
     background: #e9727e;
     box-sizing: border-box;
@@ -539,12 +478,16 @@ aside {
     display: block;
     width: 100.5%;
   }
-  .tbl tr {
+  .indexTable tr {
     margin-bottom: 40px;
   }
 }
 
 /* 食費カレンダー*/
 .calender-wrapper{
-  margin: 90px  auto;
+  margin: 30px  auto;
+}
+
+.back-btn{
+  text-align: center;
 }

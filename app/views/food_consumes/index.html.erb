@@ -1,19 +1,9 @@
-<% provide(:title, '食費カレンダー') %>
-<div class="calender-wrapper">
-  <h1 class="text-center">食費カレンダー</h2>
-  <div class="col-md-12">
-  <%= month_calendar events: @food_consumes do |date, food_consumes| %>
-    <%= date.day %>
-    <% @total = 0 %>
-    <br>
-    <% food_consumes.each do |food_consume| %>
-      <% @total += food_consume.subtotal %>
-    <% end %>
-    <%= "TOTAL：#{@total}円" if @total != 0 %>
-  <% end %>
-  </div>
-  <div class="foods-wrapper">
-    <table class="tbl">
+<% provide(:title, '消費履歴') %>
+<div class="title">
+  <h1>消費履歴</h1>
+</div>
+<div class="index-wrapper">
+  <table class="tbl">
     <tr class="thead">
     　<th class="date-cal">消費年月日</th>
       <th class="name-cal">食材名</th>
@@ -31,6 +21,10 @@
         <td><%= food.note %></td>
   　　  </tr>
     <% end %>
-    </table>
-  </div>
+  </table>
+</div>
+<div class="back-btn">
+  <%= link_to current_user do %>
+  　<btn>戻る</btn>
+　<% end %>
 </div>
