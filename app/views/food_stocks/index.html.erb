@@ -9,6 +9,8 @@
       <th class="price-cal">単価</th>
     　<th class="quantity-cal">数量</th>
     　<th class="date-cal">購入年月日</th>
+    　<th scope="col"></th>
+    　<th scope="col"></th>
     </tr>
     <% @food_stocks.each do |food| %>
   　　<tr>
@@ -16,6 +18,14 @@
         <td><%= food.price %></td>
         <td><%= food.stock_quantity %></td>
         <td><%= food.order_date %></td>
+        <td class="text-nowrap">
+          <%= link_to "更新", edit_user_food_stock_path(id:food.id) %>
+        </td>
+        <td class="text-nowrap">
+        <% if current_user?(food.user) %>
+          <%= link_to "削除", user_food_stock_path(id:food.id), data: { "turbo-method": :delete, turbo_confirm: "You sure?" } %>
+        <% end %>
+        </td>
   　　  </tr>
     <% end %>
   </table>

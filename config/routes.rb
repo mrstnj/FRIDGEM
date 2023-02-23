@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
   resources :users do
-    resources :food_stocks, shallow: true
-    resources :food_consumes, shallow: true
+    resources :food_stocks
+    resources :food_consumes
     get    "/calender",   to: "food_consumes#calender"
   end
   get '/templates/get_body', to: "templates#get_body"

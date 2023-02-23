@@ -1,0 +1,50 @@
+<% provide(:title, '食材更新') %>
+<div class="title">
+  <h1>食材更新</h1>
+</div>
+<div class="form-wrapper2">
+  <%= form_with model: [@user, @food_stock] do |f| %>
+  <table class="formTable">
+    <form>
+    <tr>
+      <div class="form-item">
+        <th>食材名</th>
+        <td>
+          <%= f.text_field :name, size: 70 %>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th>単価</th>
+        <td>
+          <%= f.number_field :price, min: 1 %> 円
+        </td>
+      </div>
+    </tr>
+     <tr>
+      <div class="form-item">
+        <th><%= f.label :購入数 %></th>
+        <td>
+          <%= f.number_field :stock_quantity, min: 1 %> 個
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <th><%= f.label :購入年月日 %></th>
+      <td>
+        <%= f.date_select :order_date, use_month_numbers: true %>
+      </td>
+    </tr>
+    </form>
+  </table>
+  <div class="btn-panel2">
+    <%= f.submit "更新", class: "btn" %>
+  </div>
+  <% end %>
+</div>
+<div class="back-btn">
+  <%= link_to current_user do %>
+  　<btn>戻る</btn>
+　<% end %>
+</div>
