@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_23_010839) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_23_050251) do
   create_table "food_consumes", force: :cascade do |t|
     t.integer "consume_quantity"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.integer "price"
+    t.integer "food_stock_id"
     t.integer "user_id", null: false
     t.datetime "start_time"
     t.integer "subtotal"

@@ -1,16 +1,15 @@
 class FoodConsume < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { order(start_time: :desc) }
   with_options presence: true do
-    validates :name
-    validates :price
+    validates :food_stock_id
     validates :consume_quantity
     validates :start_time
   end
-  validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :consume_quantity, numericality: {only_integer: true, greater_than_or_equal_to: 0}
 
   before_save do
-    self.subtotal = price * consume_quantity
+    food_stock = FoodStock.find(food_stock_id)
+    self.subtotal = food_stock.price * consume_quantity
   end
 end

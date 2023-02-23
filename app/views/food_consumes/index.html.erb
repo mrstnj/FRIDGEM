@@ -5,11 +5,32 @@
   <%= month_calendar events: @food_consumes do |date, food_consumes| %>
     <%= date.day %>
     <% @total = 0 %>
+    <br>
     <% food_consumes.each do |food_consume| %>
-      <br>
       <% @total += food_consume.subtotal %>
     <% end %>
     <%= "TOTAL：#{@total}円" if @total != 0 %>
   <% end %>
+  </div>
+  <div class="foods-wrapper">
+    <table class="tbl">
+    <tr class="thead">
+    　<th class="date-cal">消費年月日</th>
+      <th class="name-cal">食材名</th>
+      <th class="price-cal">単価</th>
+    　<th class="quantity-cal">数量</th>
+    　<th class="name-cal">メモ</th>
+    </tr>
+    <% @food_consumes.each do |food| %>
+      <% food_stock = FoodStock.find(food.food_stock_id) %>
+  　　<tr>
+        <td><%= "#{food.start_time.year}年#{food.start_time.month}月#{food.start_time.day}日" %></td>
+        <td><%= food_stock.name %></td>
+        <td><%= food_stock.price %></td>
+        <td><%= food.consume_quantity %></td>
+        <td><%= food.note %></td>
+  　　  </tr>
+    <% end %>
+    </table>
   </div>
 </div>

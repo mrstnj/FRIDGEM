@@ -8,7 +8,7 @@
       <div class="form-item">
         <th><%= f.label :食材名 %></th>
         <td>
-          <%= f.collection_select(:name, FoodStock.all, :id, :view_name_and_date,
+          <%= f.collection_select(:food_stock_id, FoodStock.all, :id, :view_name_and_date,
           {prompt: "選択してください"}, {class: 'ChoseTemplate', :onchange => "changeTemplate($(this).val())"}) %>
         </td>
       </div>
@@ -17,7 +17,7 @@
       <div class="form-item">
         <th><%= f.label :単価 %></th>
         <td>
-          <%= f.number_field :price, id: "price", min: 1  %> 円
+          <%= f.label :食材名を選択すると自動入力されます, id: "price" %>
         </td>
       </div>
     </tr>

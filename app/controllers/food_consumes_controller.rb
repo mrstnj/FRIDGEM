@@ -13,7 +13,7 @@ class FoodConsumesController < ApplicationController
 
   def create
     # 消費食材を在庫テーブルから取得する
-    @food_stock = FoodStock.find(params[:food_consume][:name])
+    @food_stock = FoodStock.find(params[:food_consume][:food_stock_id])
 
     # 在庫テーブルの数量を消費分マイナスする
     consume_quantity = params[:food_consume][:consume_quantity]
@@ -40,7 +40,7 @@ class FoodConsumesController < ApplicationController
 
     # 許可済みパラメータを指定する
     def food_params
-      params.require(:food_consume).permit(:name, :price, :consume_quantity, :start_time, :note)
+      params.require(:food_consume).permit(:food_stock_id, :consume_quantity, :start_time, :note)
     end
 
     # ログイン済みユーザーかどうか確認する
