@@ -18,6 +18,8 @@ class FoodConsumesController < ApplicationController
 
     # 消費テーブルに登録する
     @food_consume = current_user.food_consumes.build(food_params)
+
+    # 保存・更新できれば画面遷移する
     if @food_consume.save && @food_stock.update_attribute(:stock_quantity, stock_quantity)
       flash[:success] = "Food created!"
       redirect_to user_food_consumes_path
@@ -34,10 +36,6 @@ class FoodConsumesController < ApplicationController
 
     def food_params
       params.require(:food_consume).permit(:name, :price, :consume_quantity, :start_time, :note)
-    end
-
-    def food_params2
-      params.require(:food_consume).permit(:name)
     end
 
     # ログイン済みユーザーかどうか確認
