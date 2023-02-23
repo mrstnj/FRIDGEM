@@ -3,9 +3,12 @@ class FoodConsumesController < ApplicationController
   before_action :correct_user
 
   def new
+    # 新しい消費食材を作成する
     @user = User.find(params[:user_id])
-    @food_stocks = FoodStock.all
     @food_consume = FoodConsume.new
+
+    # プルダウン用に在庫食材を取得する
+    @food_stocks = FoodStock.all
   end
 
   def create
@@ -19,7 +22,7 @@ class FoodConsumesController < ApplicationController
     # 消費テーブルに登録する
     @food_consume = current_user.food_consumes.build(food_params)
 
-    # 保存・更新できれば画面遷移する
+    # 登録・更新できれば画面遷移する
     if @food_consume.save && @food_stock.update_attribute(:stock_quantity, stock_quantity)
       flash[:success] = "Food created!"
       redirect_to user_food_consumes_path
@@ -29,16 +32,18 @@ class FoodConsumesController < ApplicationController
   end
 
   def index
+    # 全消費食材を取得する
     @food_consumes = FoodConsume.all
   end
 
   private
 
+    # 許可済みパラメータを指定する
     def food_params
       params.require(:food_consume).permit(:name, :price, :consume_quantity, :start_time, :note)
     end
 
-    # ログイン済みユーザーかどうか確認
+    # ログイン済みユーザーかどうか確認する
     def logged_in_user
       unless logged_in?
         flash[:danger] = "Please log in."
@@ -46,7 +51,7 @@ class FoodConsumesController < ApplicationController
       end
     end
 
-    # 正しいユーザーかどうか確認
+    # 正しいユーザーかどうか確認する
     def correct_user
       @user = User.find(params[:user_id])
       redirect_to(root_url, status: :see_other) unless current_user?(@user)

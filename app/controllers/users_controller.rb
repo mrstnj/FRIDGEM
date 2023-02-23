@@ -3,15 +3,20 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:show]
 
   def show
+    # ユーザ情報を取得する
     @user = User.find(params[:id])
   end
 
   def new
+    # 新しいユーザを作成する
     @user = User.new
   end
 
   def create
+    # ユーザテーブルに登録する
     @user = User.new(user_params)
+
+    # 登録できれば画面遷移する
     if @user.save
       reset_session
       log_in @user
@@ -24,9 +29,9 @@ class UsersController < ApplicationController
 
   private
 
+    # 許可済みパラメータを指定する
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
     # ログイン済みユーザーかどうか確認

@@ -4,7 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # ユーザ情報を取得する
     user = User.find_by(email: params[:session][:email].downcase)
+
+    # 取得できれば画面遷移する
     if user && user.authenticate(params[:session][:password])
       reset_session
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
@@ -17,6 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    # ログアウトする
     log_out if logged_in?
     redirect_to root_url, status: :see_other
   end
