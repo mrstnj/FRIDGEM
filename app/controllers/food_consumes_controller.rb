@@ -36,6 +36,36 @@ class FoodConsumesController < ApplicationController
     @food_consumes = FoodConsume.where("user_id = ?", params[:user_id])
   end
 
+  def edit
+    # 更新する在庫食材を特定する
+    @user = User.find(params[:user_id])
+    @food_consume = FoodConsume.find(params[:id])
+  end
+
+  def update
+    # 更新する在庫食材を特定する
+    @food_consume = FoodConsume.find(params[:id])
+
+    # 更新できれば画面遷移する
+    if @food_consume.update(food_params)
+      flash[:success] = "Food updated!"
+      redirect_to user_food_consumes_path
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    food_consume = FoodConsume.find(params[:id])
+    if food_consume.user_id == current_user.id
+      food_consume.destroy #destroyメソッドを使用し対象のツイートを削除する。
+      flash[:success] = "User deleted"
+      redirect_to user_food_consumes_path, status: :see_other
+    else
+      redirect_to user_food_consumes_path, status: :unprocessable_entity
+    end
+  end
+
   def calender
     # 全消費食材を取得する
     @food_consumes = FoodConsume.where("user_id = ?", params[:user_id])

@@ -16,6 +16,9 @@
   </div>
 </div>
 <div class="back-btn">
+  <%= link_to user_food_consumes_path(params[:user_id]) do %>
+  　<btn>一覧</btn>
+　<% end %>
   <%= link_to current_user do %>
   　<btn>戻る</btn>
 　<% end %>

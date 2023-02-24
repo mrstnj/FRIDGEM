@@ -45,17 +45,6 @@ class FoodStocksController < ApplicationController
     end
   end
 
-  def destroy
-    food_stock = FoodStock.find(params[:id])
-    if food_stock.user_id == current_user.id
-      food_stock.destroy #destroyメソッドを使用し対象のツイートを削除する。
-      flash[:success] = "User deleted"
-      redirect_to user_food_stocks_path, status: :see_other
-    else
-      redirect_to user_food_stocks_path, status: :unprocessable_entity
-    end
-  end
-
   private
 
     # 許可済みパラメータを指定する

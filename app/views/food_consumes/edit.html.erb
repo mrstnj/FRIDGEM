@@ -1,0 +1,44 @@
+<% provide(:title, '消費履歴更新') %>
+<div class="title">
+  <h1>消費履歴更新</h1>
+</div>
+<div class="form-wrapper2">
+  <%= form_with model: [@user, @food_consume] do |f| %>
+  <table class="formTable">
+    <form>
+    <tr>
+      <div class="form-item">
+        <th><%= f.label :消費年月日 %></th>
+        <td>
+          <%= f.date_select :order_date, use_month_numbers: true %>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th><%= f.label :消費数 %></th>
+        <td>
+          <%= f.number_field :consume_quantity, min: 1 %> 個
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th>メモ</th>
+        <td>
+          <%= f.text_field :note, size: 70 %>
+        </td>
+      </div>
+    </tr>
+    </form>
+  </table>
+  <div class="btn-panel2">
+    <%= f.submit "更新", class: "btn" %>
+  </div>
+  <% end %>
+</div>
+<div class="back-btn">
+  <%= link_to user_food_consumes_path(params[:user_id]) do %>
+  　<btn>戻る</btn>
+　<% end %>
+</div>
