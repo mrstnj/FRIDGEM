@@ -10,8 +10,8 @@
       <div class="form-item">
         <th>食材名</th>
         <td>
-          <%= f.collection_select(:food_stock_id, FoodStock.all, :id, :view_name_and_date,
-          {prompt: "選択してください"}, {class: 'ChoseTemplate', :onchange => "changeTemplate($(this).val())"}) %>
+          <%= f.collection_select(:food_stock_id, FoodStock.where("user_id = ? and stock_quantity != ?", params[:user_id], 0 ),
+          :id, :view_name_and_date, {prompt: "選択してください"}, {class: 'ChoseTemplate', :onchange => "changeTemplate($(this).val())"}) %>
         </td>
       </div>
     </tr>
@@ -51,9 +51,7 @@
   <% end %>
 </div>
 <div class="back-btn">
-  <%= link_to current_user do %>
-  　<btn>戻る</btn>
-　<% end %>
+  <%= link_to "戻る", current_user %>
 </div>
 <script>
   function changeTemplate(val){

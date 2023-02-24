@@ -1,6 +1,6 @@
-<% provide(:title, '消費履歴更新') %>
+<% provide(:title, '消費食材履歴（更新）') %>
 <div class="title">
-  <h1>消費履歴更新</h1>
+  <h1>消費食材履歴（更新）</h1>
 </div>
 <div class="form-wrapper2">
   <%= form_with model: [@user, @food_consume] do |f| %>
@@ -38,7 +38,5 @@
   <% end %>
 </div>
 <div class="back-btn">
-  <%= link_to user_food_consumes_path(params[:user_id]) do %>
-  　<btn>戻る</btn>
-　<% end %>
+  <%= link_to "戻る", current_user %>
 </div>

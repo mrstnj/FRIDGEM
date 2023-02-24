@@ -1,6 +1,6 @@
-<% provide(:title, '消費履歴') %>
+<% provide(:title, '消費食材履歴') %>
 <div class="title">
-  <h1>消費履歴</h1>
+  <h1>消費食材履歴</h1>
 </div>
 <div class="index-wrapper">
   <table class="indexTable">
@@ -34,7 +34,5 @@
   </table>
 </div>
 <div class="back-btn">
-  <%= link_to current_user do %>
-  　<btn>戻る</btn>
-　<% end %>
+  <%= link_to "戻る", current_user %>
 </div>

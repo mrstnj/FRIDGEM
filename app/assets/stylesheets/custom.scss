@@ -259,7 +259,6 @@ form {
 .menu-wrapper {
   text-align: center;
   padding: 240px 100px 100px 100px;
-  background-color: #EEEEEE;
 }
 
 .menu {
@@ -309,6 +308,11 @@ form {
   background-size: contain;
 }
 
+.contents-btn{
+  text-decoration: none;
+  color: black ;
+}
+
 /* 機能画面共通 */
 .title{
   background-image: url(header.png);
@@ -316,6 +320,10 @@ form {
   font-size: 0.8em;
   text-align: center;
   padding: 60px 10px 10px 10px;
+}
+
+.back-btn{
+  text-align: center;
 }
 
 /* 食材在庫・食材消費登録*/
@@ -486,8 +494,4 @@ form {
 /* 食費カレンダー*/
 .calender-wrapper{
   margin: 30px  auto;
-}
-
-.back-btn{
-  text-align: center;
 }

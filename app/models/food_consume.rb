@@ -8,6 +8,7 @@ class FoodConsume < ApplicationRecord
   end
   validates :consume_quantity, numericality: {only_integer: true, greater_than_or_equal_to: 0}
 
+  # 食材ごとの食費を計算する
   before_save do
     food_stock = FoodStock.find(food_stock_id)
     self.subtotal = food_stock.price * consume_quantity

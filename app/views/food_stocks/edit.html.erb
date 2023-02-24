@@ -1,6 +1,6 @@
-<% provide(:title, '食材更新') %>
+<% provide(:title, '食材在庫（更新）') %>
 <div class="title">
-  <h1>食材更新</h1>
+  <h1>食材在庫（更新）</h1>
 </div>
 <div class="form-wrapper2">
   <%= form_with model: [@user, @food_stock] do |f| %>
@@ -44,7 +44,5 @@
   <% end %>
 </div>
 <div class="back-btn">
-  <%= link_to current_user do %>
-  　<btn>戻る</btn>
-　<% end %>
+  <%= link_to "戻る", current_user %>
 </div>

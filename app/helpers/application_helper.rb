@@ -1,12 +1,11 @@
 module ApplicationHelper
-
-  # ページごとの完全なタイトルを返します。                   # コメント行
-  def full_title(page_title = '')                     # メソッド定義とオプション引数
-    base_title = "FRIDGEM"  # 変数への代入
-    if page_title.empty?                              # 論理値テスト
-      base_title                                      # 暗黙の戻り値
+  # ページごとのタイトルを設定する
+  def full_title(page_title = '')
+    base_title = "FRIDGEM"
+    if page_title.empty?
+      base_title
     else
-      "#{page_title} | #{base_title}"                 # 文字列の式展開
+      "#{page_title} | #{base_title}"
     end
   end
 end

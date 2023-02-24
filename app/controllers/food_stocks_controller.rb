@@ -14,7 +14,6 @@ class FoodStocksController < ApplicationController
 
     # 登録できれば画面遷移する
     if @food_stock.save
-      flash[:success] = "Food created!"
       redirect_to user_food_stocks_path
     else
       render 'new', status: :unprocessable_entity
@@ -23,7 +22,7 @@ class FoodStocksController < ApplicationController
 
   def index
     # ユーザの在庫食材を取得する
-    @food_stocks = FoodStock.where("user_id = ?", params[:user_id])
+    @food_stocks = FoodStock.where("user_id = ? and stock_quantity != ?", params[:user_id], 0 )
   end
 
   def edit
@@ -38,7 +37,6 @@ class FoodStocksController < ApplicationController
 
     # 更新できれば画面遷移する
     if @food_stock.update(food_params)
-      flash[:success] = "Food updated!"
       redirect_to user_food_stocks_path
     else
       render 'edit', status: :unprocessable_entity

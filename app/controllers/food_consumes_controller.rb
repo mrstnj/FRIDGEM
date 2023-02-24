@@ -6,9 +6,6 @@ class FoodConsumesController < ApplicationController
     # 新しい消費食材を作成する
     @user = User.find(params[:user_id])
     @food_consume = FoodConsume.new
-
-    # プルダウン用に在庫食材を取得する
-    @food_stocks = FoodStock.all
   end
 
   def create
@@ -24,7 +21,6 @@ class FoodConsumesController < ApplicationController
 
     # 登録・更新できれば画面遷移する
     if @food_consume.save && @food_stock.update_attribute(:stock_quantity, stock_quantity)
-      flash[:success] = "Food created!"
       redirect_to user_calender_path
     else
       render 'new', status: :unprocessable_entity
@@ -48,7 +44,6 @@ class FoodConsumesController < ApplicationController
 
     # 更新できれば画面遷移する
     if @food_consume.update(food_params)
-      flash[:success] = "Food updated!"
       redirect_to user_food_consumes_path
     else
       render 'edit', status: :unprocessable_entity
@@ -59,7 +54,6 @@ class FoodConsumesController < ApplicationController
     food_consume = FoodConsume.find(params[:id])
     if food_consume.user_id == current_user.id
       food_consume.destroy #destroyメソッドを使用し対象のツイートを削除する。
-      flash[:success] = "User deleted"
       redirect_to user_food_consumes_path, status: :see_other
     else
       redirect_to user_food_consumes_path, status: :unprocessable_entity
