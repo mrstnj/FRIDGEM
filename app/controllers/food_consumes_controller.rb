@@ -14,16 +14,17 @@ class FoodConsumesController < ApplicationController
 
     # 在庫テーブルの数量を消費分マイナスする
     consume_quantity = params[:food_consume][:consume_quantity]
-    stock_quantity = @food_stock.stock_quantity - consume_quantity.to_i
+    stock_quantity = @food_stock.stock_quantity - consume_quantity.to_f
 
     # 消費テーブルに登録する
     @food_consume = current_user.food_consumes.build(food_params)
 
     # 登録・更新できれば画面遷移する
-    if @food_consume.save && @food_stock.update_attribute(:stock_quantity, stock_quantity)
+    if @food_consume.save && stock_quantity >= 0
+      @food_stock.update_attribute(:stock_quantity, stock_quantity)
       redirect_to user_calender_path
     else
-      render 'new', status: :unprocessable_entity
+      redirect_to new_user_food_consume_path, status: :unprocessable_entity
     end
   end
 
@@ -46,7 +47,7 @@ class FoodConsumesController < ApplicationController
     if @food_consume.update(food_params)
       redirect_to user_food_consumes_path
     else
-      render 'edit', status: :unprocessable_entity
+      redirect_to 'edit', status: :unprocessable_entity
     end
   end
 

@@ -6,7 +6,7 @@ class FoodConsume < ApplicationRecord
     validates :consume_quantity
     validates :start_time
   end
-  validates :consume_quantity, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  validates :consume_quantity, numericality: {greater_than_or_equal_to: 0}
 
   # 食材ごとの食費を計算する
   before_save do

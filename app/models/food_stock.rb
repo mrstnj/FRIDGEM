@@ -8,7 +8,7 @@ class FoodStock < ApplicationRecord
     validates :order_date
   end
   validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 0}
-  validates :stock_quantity, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  validates :stock_quantity, numericality: {greater_than_or_equal_to: 0}
 
   # 食材と購入日を結合する
   def view_name_and_date
