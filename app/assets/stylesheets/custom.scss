@@ -493,5 +493,33 @@ form {
 
 /* 食費カレンダー*/
 .calender-wrapper{
-  margin: 30px  auto;
+  margin: 0 150px;
+}
+
+.consume-btn{
+  margin: 30px 170px 0 0;
+  text-align: right;
+}
+.simple-calendar {
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
 }

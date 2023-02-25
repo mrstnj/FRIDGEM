@@ -2,6 +2,9 @@
 <div class="title">
   <h1 class="text-center">食費カレンダー</h1>
 </div>
+<div class="consume-btn">
+  <%= link_to "食材消費履歴はこちら", user_food_consumes_path(params[:user_id]) %>
+</div>
 <div class="calender-wrapper">
   <div class="col-md-12">
   <%= month_calendar events: @food_consumes do |date, food_consumes| %>
@@ -14,11 +17,7 @@
     <%= "TOTAL：#{@total}円" if @total != 0 %>
   <% end %>
   </div>
-</div>
-<div class="back-btn">
-  <%= link_to "一覧", user_food_consumes_path(params[:user_id]) %>
-</div>
-<div class="back-btn">
-  <%= link_to "戻る", current_user %>
-</div>
+  <div class="back-btn">
+    <%= link_to "戻る", current_user %>
+  </div>
 </div>
