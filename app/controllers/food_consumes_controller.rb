@@ -14,7 +14,8 @@ class FoodConsumesController < ApplicationController
 
     # 在庫テーブルの数量を消費分マイナスする
     consume_quantity = params[:food_consume][:consume_quantity]
-    stock_quantity = @food_stock.stock_quantity - consume_quantity.to_f
+    stock_quantity = @food_stock.stock_quantity.rationalize - consume_quantity.to_f.rationalize
+    stock_quantity = stock_quantity.to_f
 
     # 消費テーブルに登録する
     @food_consume = current_user.food_consumes.build(food_params)

@@ -11,6 +11,7 @@ class FoodConsume < ApplicationRecord
   # 食材ごとの食費を計算する
   before_save do
     food_stock = FoodStock.find(food_stock_id)
-    self.subtotal = food_stock.price * consume_quantity
+    self.subtotal = food_stock.price.rationalize * consume_quantity.rationalize
+    self.subtotal = self.subtotal.to_f
   end
 end
