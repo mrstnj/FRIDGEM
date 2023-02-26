@@ -428,11 +428,11 @@ form {
 
 /* 食材在庫・食材消費一覧*/
 .index-wrapper{
-  margin: 90px  auto;
+  margin: 30px auto 0 auto ;
 }
 
 .indexTable{
-  margin: 3px auto;
+  margin: auto;
 }
 
 .name-cal{
@@ -449,7 +449,7 @@ form {
 
 .index-wrapper th {
   text-align: center;
-  background: #e9727e;
+  background: #ee3e52;
   border: solid 1px #ccc;
   color: #fff;
   padding: 10px;
@@ -491,6 +491,10 @@ form {
   }
 }
 
+.paginate{
+  text-align: center;
+}
+
 /* 食費カレンダー*/
 .calender-wrapper{
   margin: 0 150px;
@@ -500,26 +504,23 @@ form {
   margin: 30px 170px 0 0;
   text-align: right;
 }
+
 .simple-calendar {
-  .day {}
+  .day {
+    background-color: white;
+  }
+  .today {
+    background-color: #FFFF99;
+  }
+  .prev-month {
+    background-color: #d3d3d3;
+  }
+  .next-month {
+    background-color: #d3d3d3;
+  }
+}
 
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
-
-  .today {}
-  .past {}
-  .future {}
-
-  .start-date {}
-
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {}
+.week {
+	background-color: #808080;
+	color: white;
 }

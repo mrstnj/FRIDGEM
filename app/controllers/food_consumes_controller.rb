@@ -31,13 +31,14 @@ class FoodConsumesController < ApplicationController
 
   def index
     # 全消費食材を取得する
-    @food_consumes = FoodConsume.where("user_id = ?", params[:user_id])
+    @food_consumes = FoodConsume.where("user_id = ?", params[:user_id]).page(params[:page]).per(10)
   end
 
   def edit
     # 更新する在庫食材を特定する
     @user = User.find(params[:user_id])
     @food_consume = FoodConsume.find(params[:id])
+    @food_stock = FoodStock.find(@food_consume.food_stock_id)
   end
 
   def update

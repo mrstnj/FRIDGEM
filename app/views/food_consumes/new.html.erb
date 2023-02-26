@@ -7,6 +7,12 @@
   <table class="formTable">
     <form>
     <tr>
+      <th>消費年月日</th>
+      <td>
+        <%= f.datetime_field :start_time, value: Time.current.strftime('%Y-%m-%dT00:00:00') %>
+      </td>
+    </tr>
+    <tr>
       <div class="form-item">
         <th>食材名</th>
         <td>
@@ -30,12 +36,6 @@
           <%= f.number_field :consume_quantity, id: "consume_quantity", min: 0.1, step: "0.1" %> 個
         </td>
       </div>
-    </tr>
-    <tr>
-      <th>消費年月日</th>
-      <td>
-        <%= f.datetime_field :start_time, value: Time.current.strftime('%Y-%m-%dT00:00:00') %>
-      </td>
     </tr>
 　　<tr>
       <th>メモ</th>

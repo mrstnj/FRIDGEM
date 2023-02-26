@@ -22,7 +22,7 @@ class FoodStocksController < ApplicationController
 
   def index
     # ユーザの在庫食材を取得する
-    @food_stocks = FoodStock.where("user_id = ? and stock_quantity != ?", params[:user_id], 0 )
+    @food_stocks = FoodStock.where("user_id = ? and stock_quantity != ?", params[:user_id], 0 ).page(params[:page]).per(10)
   end
 
   def edit

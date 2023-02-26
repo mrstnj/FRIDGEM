@@ -8,17 +8,33 @@
     <form>
     <tr>
       <div class="form-item">
-        <th><%= f.label :消費年月日 %></th>
+        <th>食材名</th>
         <td>
-          <%= f.date_select :order_date, use_month_numbers: true %>
+          <%= @food_stock.name %>
         </td>
       </div>
     </tr>
     <tr>
       <div class="form-item">
-        <th><%= f.label :消費数 %></th>
+        <th>単価</th>
         <td>
-          <%= f.number_field :consume_quantity, min: 1 %> 個
+          <%= @food_stock.price %> 円
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th>消費年月日</th>
+        <td>
+          <%= f.datetime_field :start_time, value: Time.current.strftime('%Y-%m-%dT00:00:00') %>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <div class="form-item">
+        <th>消費数</th>
+        <td>
+          <%= f.number_field :consume_quantity, min: 1, step: "0.1" %> 個
         </td>
       </div>
     </tr>
@@ -38,5 +54,5 @@
   <% end %>
 </div>
 <div class="back-btn">
-  <%= link_to "戻る", current_user %>
+  <%= link_to "戻る", user_food_consumes_path %>
 </div>
