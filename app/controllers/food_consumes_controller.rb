@@ -35,14 +35,14 @@ class FoodConsumesController < ApplicationController
   end
 
   def edit
-    # 更新する在庫食材を特定する
+    # 更新する消費食材を特定する
     @user = User.find(params[:user_id])
     @food_consume = FoodConsume.find(params[:id])
     @food_stock = FoodStock.find(@food_consume.food_stock_id)
   end
 
   def update
-    # 更新する在庫食材を特定する
+    # 更新する消費食材を特定する
     @food_consume = FoodConsume.find(params[:id])
 
     # 更新できれば画面遷移する
@@ -54,9 +54,12 @@ class FoodConsumesController < ApplicationController
   end
 
   def destroy
+    # 削除する消費食材を特定する
     food_consume = FoodConsume.find(params[:id])
+
+    # 削除できれば画面遷移する
     if food_consume.user_id == current_user.id
-      food_consume.destroy #destroyメソッドを使用し対象のツイートを削除する。
+      food_consume.destroy
       redirect_to user_food_consumes_path, status: :see_other
     else
       redirect_to user_food_consumes_path, status: :unprocessable_entity
