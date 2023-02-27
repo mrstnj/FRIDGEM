@@ -45,7 +45,7 @@ DB : PostgreSQL　　
 
 # 機能詳細
 ## トップ
-
+![トップ](https://user-images.githubusercontent.com/119155601/221578927-45d0915d-48a0-41a6-b97a-fd5b2c1e78a2.gif)
 
 ## ユーザ登録
 ### ユーザ登録ページ
