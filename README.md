@@ -71,6 +71,11 @@ DB : PostgreSQL　　
 
 
 ## 消費食材ページ
+### 消費食材登録ページ
+![食材を使う](https://user-images.githubusercontent.com/119155601/221581532-fd536697-1e25-42d2-9332-30bb42b9f67d.gif)
+
+
+
 ### 食費カレンダーページ
 <img width="1440" alt="食費カレンダー" src="https://user-images.githubusercontent.com/119155601/221576303-9c473c64-a0be-4672-b7aa-8798ad34b8ff.png">
 
