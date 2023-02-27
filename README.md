@@ -61,20 +61,18 @@ DB : PostgreSQL　　
 
 
 ## 在庫食材ページ
+### 在庫食材登録ページ
+![食材登録](https://user-images.githubusercontent.com/119155601/221582273-c6a9547b-9672-47e7-888a-1b0e6f9c378f.gif)
+
 ### 在庫食材一覧ページ
 <img width="1440" alt="在庫食材一覧" src="https://user-images.githubusercontent.com/119155601/221577384-ca658d17-5448-4e99-8240-07a7cf016614.png">
 
 ### 在庫食材（更新）ページ
 <img width="1440" alt="在庫食材（更新）" src="https://user-images.githubusercontent.com/119155601/221577327-fc336e75-467a-4584-8822-1c6c35bbb168.png">
 
-
-
-
 ## 消費食材ページ
 ### 消費食材登録ページ
 ![食材を使う](https://user-images.githubusercontent.com/119155601/221581532-fd536697-1e25-42d2-9332-30bb42b9f67d.gif)
-
-
 
 ### 食費カレンダーページ
 <img width="1440" alt="食費カレンダー" src="https://user-images.githubusercontent.com/119155601/221576303-9c473c64-a0be-4672-b7aa-8798ad34b8ff.png">
