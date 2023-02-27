@@ -63,7 +63,7 @@ DB : PostgreSQL　　
 
 # 機能詳細
 ## トップ
-アプリのトップ画面です。機能一覧を表示します。
+アプリのトップ画面です。主な機能を表示します。
 ![トップ](https://user-images.githubusercontent.com/119155601/221579433-e66c0329-4697-40bd-b723-df3537a6ba3d.gif)
 
 ## ユーザ登録
@@ -75,6 +75,9 @@ DB : PostgreSQL　　
 ログインするためのページです。
 ### ログインページ
 <img width="1440" alt="ログイン" src="https://user-images.githubusercontent.com/119155601/221577250-1faa80e2-db24-4c32-ae50-11bc2a5d82af.png">
+
+▼ 工夫点
+- 永続Cookieを使用しており、二度目以降は自動ログインすることもできます。
 
 ## ユーザメニュー
 ログイン後のメニュー画面です。
