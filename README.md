@@ -126,3 +126,7 @@ DB : PostgreSQL　　
 ### 消費食材履歴ページ
 登録された消費食材の一覧を表示します。
 <img width="1440" alt="消費食材履歴" src="https://user-images.githubusercontent.com/119155601/221576081-c1635221-0cd4-4c57-adaa-5087aab0e91e.png">
+
+### 消費食材（更新）ページ
+登録された消費食材情報を編集します。
+<img width="1440" alt="消費食材（更新）" src="https://user-images.githubusercontent.com/119155601/221705558-7a042ccb-fdf5-42e7-8b29-5de5234d79a5.png">
