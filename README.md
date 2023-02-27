@@ -5,6 +5,8 @@
 
 食材の在庫管理、日別の食費記録、レシピ記録としてご活用いただけます。
 
+<img width="1440" alt="トップ" src="https://user-images.githubusercontent.com/119155601/221583204-e93e85d5-c2f6-4bce-888f-b32cf8259817.png">
+
 ## URL
 https://fridgem2.onrender.com
 
