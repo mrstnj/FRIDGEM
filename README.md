@@ -64,6 +64,7 @@ DB : PostgreSQL　　
 # 機能詳細
 ## トップ
 アプリのトップ画面です。主な機能を表示します。
+
 ![トップ](https://user-images.githubusercontent.com/119155601/221579433-e66c0329-4697-40bd-b723-df3537a6ba3d.gif)
 
 ## ユーザ登録
