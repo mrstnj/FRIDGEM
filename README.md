@@ -63,17 +63,21 @@ DB : PostgreSQL　　
 
 # 機能詳細
 ## トップ
+アプリのトップ画面です。機能一覧を表示します。
 ![トップ](https://user-images.githubusercontent.com/119155601/221579433-e66c0329-4697-40bd-b723-df3537a6ba3d.gif)
 
 ## ユーザ登録
+ユーザ登録するためのページです。
 ### ユーザ登録ページ
 <img width="1440" alt="ユーザ登録" src="https://user-images.githubusercontent.com/119155601/221577216-d6cfc1da-c1c7-43e5-8e72-e1ecbd1dbb7b.png">
 
 ## ログイン
+ログインするためのページです。
 ### ログインページ
 <img width="1440" alt="ログイン" src="https://user-images.githubusercontent.com/119155601/221577250-1faa80e2-db24-4c32-ae50-11bc2a5d82af.png">
 
 ## ユーザメニュー
+ログイン後のメニュー画面です。
 ### ユーザメニューページ
 <img width="1440" alt="ユーザメニュー" src="https://user-images.githubusercontent.com/119155601/221577105-1193badb-b61f-4d07-b3b5-2611f8d58c37.png">
 
@@ -86,7 +90,7 @@ DB : PostgreSQL　　
 - 「在庫数量」は0以下が入力できない仕様となっております。
 
 ### 在庫食材一覧ページ
-登録された食材が表示されます。
+登録された食材の一覧が表示されます。
 <img width="1440" alt="在庫食材一覧" src="https://user-images.githubusercontent.com/119155601/221577384-ca658d17-5448-4e99-8240-07a7cf016614.png">
 
 ▼ 工夫点
@@ -120,4 +124,5 @@ DB : PostgreSQL　　
 - 小数点以下の食費も表示される仕様となっております。
 
 ### 消費食材履歴ページ
+登録された消費食材の一覧を表示します。
 <img width="1440" alt="消費食材履歴" src="https://user-images.githubusercontent.com/119155601/221576081-c1635221-0cd4-4c57-adaa-5087aab0e91e.png">
