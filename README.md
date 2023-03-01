@@ -138,3 +138,6 @@ DB : PostgreSQL　　
 ### 消費食材（更新）ページ
 登録された消費食材情報を編集します。
 <img width="1440" alt="消費食材（更新）" src="https://user-images.githubusercontent.com/119155601/221705558-7a042ccb-fdf5-42e7-8b29-5de5234d79a5.png">
+
+# ER図
+<img width="963" alt="スクリーンショット 2023-03-01 23 16 07" src="https://user-images.githubusercontent.com/119155601/222166051-e198da21-1151-4d8d-9d38-bd9246ba223c.png">
