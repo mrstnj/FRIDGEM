@@ -14,7 +14,7 @@ class FoodStocksController < ApplicationController
 
     # 登録できれば画面遷移する
     if @food_stock.save
-      redirect_to user_food_stocks_path
+      redirect_to new_user_food_stock_path
     else
       render 'new', status: :unprocessable_entity
     end

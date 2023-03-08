@@ -222,7 +222,7 @@ form {
   width: 100%;
 }
 
-.btn-panel .btn {
+.btn-panel .login-btn {
   background: #f16272;
   border: none;
   color: #fff;
@@ -237,7 +237,7 @@ form {
   width: 100%;
 }
 
-.btn:hover {
+.login-btn:hover {
   background: #ee3e52;
 }
 
@@ -348,6 +348,11 @@ form {
   margin-top: 15px;
 }
 
+.consume-btn, .stock-btn{
+  margin: 30px 170px 0 0;
+  text-align: right;
+}
+
 /* 食材在庫・食材消費登録*/
 .form-wrapper2 {
   max-width: 900px;
@@ -429,7 +434,7 @@ form {
   text-align: center;
 }
 
-.btn-panel2 .btn {
+.btn-panel2 .update-btn {
   background: #f16272;
   border: none;
   color: #fff;
@@ -444,7 +449,7 @@ form {
   width: 30%;
 }
 
-.btn:hover {
+.update-btn:hover {
   background: #ee3e52;
 }
 
@@ -520,11 +525,6 @@ form {
 /* 食費カレンダー*/
 .calender-wrapper{
   margin: 0 150px;
-}
-
-.consume-btn{
-  margin: 30px 170px 0 0;
-  text-align: right;
 }
 
 .simple-calendar {

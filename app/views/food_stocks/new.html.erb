@@ -2,6 +2,9 @@
 <div class="title">
   <h1>食材登録</h1>
 </div>
+<div class="stock-btn">
+  <%= link_to "食材一覧はこちら", user_food_stocks_path(params[:user_id]) %>
+</div>
 <div class="form-wrapper2">
   <%= form_with model: [@user, @food_stock] do |f| %>
   <table class="formTable">
@@ -39,7 +42,7 @@
     </form>
   </table>
   <div class="btn-panel2">
-    <%= f.submit "登録", class: "btn" %>
+    <%= f.submit "登録", class: "update-btn" %>
   </div>
   <% end %>
 </div>
