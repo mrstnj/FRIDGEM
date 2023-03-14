@@ -1,0 +1,21 @@
+<% provide(:title, 'パスワード再設定') %>
+<div class="form-wrapper">
+  <h1>パスワード再設定</h1>
+  <%= form_with(model: @user, url: password_reset_path(params[:id])) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <%= hidden_field_tag :email, @user.email %>
+    <form>
+      <div class="form-item">
+        <%= f.password_field :password, :placeholder => "パスワード" %>
+      </div>
+      <div class="form-item">
+        <%= f.password_field :password_confirmation, :placeholder => "確認用パスワード" %>
+      </div>
+      <div class="btn-panel">
+        <%= f.submit "再設定", class: "login-btn" %>
+      </div>
+    </form>
+    <div class="form-footer">
+    </div>
+  <% end %>
+</div>
