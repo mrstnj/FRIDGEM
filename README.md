@@ -10,9 +10,9 @@
 ## URL
 https://fridgem2.onrender.com
 ### テストユーザ
-e-mail:hoge@example.com
+e-mail:foo@example.com
 
-pass:hogehoge
+pass:password
 
 ## 作成背景
 食材の物価や、食費の金銭感覚を養うために、一人暮らしをはじめてから日別の食費を記録している。
